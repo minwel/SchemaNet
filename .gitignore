@@ -1,0 +1,17 @@
+out
+out/
+data/
+__pycache__/
+nohup.out
+test_code
+tmp
+logs
+test_code/
+label_code_0112/
+tmp/
+logs/
+*.log
+*.png
+*.tar
+*.zip
+*.pth

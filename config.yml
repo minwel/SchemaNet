@@ -1,0 +1,36 @@
+# base
+root_path: "." 
+code_from: "3004"
+code_src: "data/test/{code_from}"
+true_code_path: "data/test/{code_from}.xlsx"
+
+tc_num_fuzzed: 16  # 最终要生成的测试用例总数
+cls_cnt_limit: 30  # 有效类的数量限制。数值越小，要求出现频次越高，越严格
+
+# code split
+is_block: True  # 是否分块
+layer_floor: 1 # 最少几层
+layer_ceiling: 3 # 最多几层
+
+# classify
+batch_size: 32
+split_ratio: 0.6
+bert_max_len: 256
+
+# path
+test_case_folder: "data/testcase"  # 测试用例存放路径
+tmp_path: "tmp"  # 缓存文件、临时文件存放路径
+ast_dict_pkl_fname: "ast_dict.pkl"  # ast_node缓存文件
+
+dis_threshold:
+    io: 1.01  # 1 / 0.85 = 1.17647058824
+    cent: 0.01
+    codebert: 0.01
+
+# executor:
+timeout: 5  # timeout for executing each test case，per s
+
+
+# pre_trained language(code) model(if needed)
+model_path:
+    codebert: "microsoft/codebert-base"
